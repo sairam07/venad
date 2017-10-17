@@ -1,0 +1,36 @@
+<div class="tab-pane fade in active">
+    <h6>Reservations</h6>
+    <nav>
+        <ul class="pager">
+            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+            <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+    <div>
+        <label for="Search">Search Here</label>
+        <input type="text" class="form-control" id="text" placeholde="Search text" ng-model="reserveListVm.searchTxt" >
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><a href="#"/> CNF Number </th>
+                <th> First Name </th>
+                <th> Date </th>
+                <th> Time </th>
+                <th> size </th>
+                <th> status </th>
+            <tr>
+            </thead>
+            <tbody>
+             <tr ng-repeat ="r in reserveListVm.reservation | filter:reserveListVm.searchTxt">
+                 <td><a href="#"/>{{r.cust_id}}</td>
+                 <td>{{r.firstName}}</td>
+                 <td>{{r.date}}</td>
+                 <td>{{r.time}}</td>
+                 <td>{{r.guests}}</td>
+                 <td>{{r.status}}</td>
+             </tr>
+
+        </table>
+    </div>
+</div>
