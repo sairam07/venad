@@ -12,7 +12,7 @@
                 var pass=obj.pass;
                 var path="D:\Rresevation\Owner\owner.html";
                 if(uname=="venkata"&& pass=="2093"){
-                    $window.location.href="/Resevation/Owner/owner.html#/reserveList";
+                    $window.location.href="/Reservation/Owner/owner.html#/reserveList";
 
 
                 }
