@@ -12,7 +12,7 @@ app.get('/home',function(req,res){
 	res.send('Hello This is Express Web Server ! Welcome Home !');
 });
 
-app.use(express.static(__dirname + '/Customer'));
+app.use(express.static(__dirname + '/Reservation'));
 
 app.listen(PORT, function(){
 	console.log('Express Server Started at port: ', PORT);
