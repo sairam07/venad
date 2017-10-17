@@ -12,6 +12,10 @@ app.get('/home',function(req,res){
 	res.send('Hello This is Express Web Server ! Welcome Home !');
 });
 
+app.get('',function(req,res){
+	app.use(express.static(__dirname + '/Reservation/Customer/home.html'));
+});
+
 app.use(express.static(__dirname + '/Reservation'));
 
 app.listen(PORT, function(){

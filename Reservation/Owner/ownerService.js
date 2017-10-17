@@ -17,7 +17,7 @@
             var defer = $q.defer();
 
             $http
-                .get('http://localhost:8080/app/customer/status')
+                .get(endpoint + '/app/customer/status')
                 .then(function (response){
                     defer.resolve(response.data);
                 }, function (error){
