@@ -88,7 +88,7 @@
 
         self.deletetable = function(id) {
             var defer = $q.defer();
-            console.log("At Delete");
+            console.log("At Delete in owner service");
             $http
                 .delete(endpoint + '/app/reservation/' + id)
                 .then(function(response) {

@@ -46,8 +46,7 @@
 
         }
 
-        actionVm.deletetable = function(id) {
-            actionVm.table = resobj;
+        actionVm.deletetable = function() {
 
             console.log('Delete table');
             ownerService
