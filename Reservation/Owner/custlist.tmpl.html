@@ -6,28 +6,28 @@
             <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
     </nav>
-   <div>
-    <label for="Search">Search Here</label>
-    <input type="text" class="form-control" id="text" placeholde="Search text" ng-model="customerListVm.searchTxt" >
+    <div>
+        <label for="Search">Search Here</label>
+        <input type="text" class="form-control" id="text" placeholde="Search text" ng-model="customerListVm.searchTxt">
 
-    <label>Click On Customer ID for options</label>
+        <label>Click On Customer ID for options</label>
 
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th><a href="#"/> CUstomer ID </th>
-                <th> First Name </th>
-                <th> Date </th>
-                <th> Time </th>
-                <th> size </th>
-                <th> Occasion </th>
-                <th> status </th>
-            <tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat ="c in customerListVm.customer | filter:customerListVm.searchTxt">
-                <td><a ng href="#/actions/{{c.cust_id}}">{{c.cust_id}}</td>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th><a href="#" /> Customer ID </th>
+                        <th> First Name </th>
+                        <th> Date </th>
+                        <th> Time </th>
+                        <th> size </th>
+                        <th> Occasion </th>
+                        <th> status </th>
+                        <tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="c in customerListVm.customer | filter:customerListVm.searchTxt">
+                        <td><a ng href="#/actions/{{c.cust_id}}">{{c.cust_id}}</td>
                 <td>{{c.firstName}}</td>
                 <td>{{c.date}}</td>
                 <td>{{c.time}}</td>

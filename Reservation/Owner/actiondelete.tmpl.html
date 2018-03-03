@@ -2,7 +2,7 @@
     <h6>Deleting</h6>
     <label>Customer ID: {{actionVm.detail.cust_id}} </label><br>
     <label>  Customer Name : {{actionVm.detail.firstName}} </label>
-    <form ng-submit="actionVm.deltetable()">
+    <form ng-submit="actionVm.deltetable({{actionVm.detail.cust_id}})">
         <button type="submit" class="btn btn-primary">Confirm Delete</button>
     </form>
 </div>
