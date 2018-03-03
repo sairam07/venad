@@ -48,7 +48,7 @@
 
         actionVm.deletetable = function() {
 
-            console.log('Delete table');
+            console.log('Deleting record');
             ownerService
                 .deletetable($routeParams.id)
                 .then(function(response) {
@@ -61,13 +61,6 @@
         actionVm.deletetable = function(id) {
 
             console.log('Delete table');
-            ownerService
-                .deletetable($routeParams.id)
-                .then(function(response) {
-                    console.log(response.tab_id);
-                    $window.alert("Record Deleted");
-                });
-
         }
 
 
