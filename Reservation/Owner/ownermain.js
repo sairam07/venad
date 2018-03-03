@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     angular
@@ -6,7 +6,8 @@
         .config(moduleConfig);
 
     moduleConfig.$inject = ['$routeProvider'];
-    function moduleConfig ($routeProvider) {
+
+    function moduleConfig($routeProvider) {
 
         $routeProvider
             .when('/reserveList', {
@@ -44,10 +45,15 @@
                 controller: 'ActionController',
                 controllerAs: 'actionVm'
             })
-
-
-            .otherwise({
-                redirectTo: '/reserveList'
+            .when('/actionsdelete/:id', {
+                templateUrl: 'actiondelete.tmpl.html',
+                controller: 'ActionController',
+                controllerAs: 'actionVm'
             })
+
+
+        .otherwise({
+            redirectTo: '/reserveList'
+        })
     }
 })();
