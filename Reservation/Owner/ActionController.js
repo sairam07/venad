@@ -49,9 +49,9 @@
         actionVm.deletetable = function(resobj, id) {
             actionVm.table = resobj;
 
-            console.log('Deletetable');
+            console.log('Delete table');
             ownerService
-                .updatetable(actionVm.table, $routeParams.id)
+                .deletetable(actionVm.table, $routeParams.id)
                 .then(function(response) {
                     console.log(response.tab_id);
                     $window.alert("Record Deleted");
