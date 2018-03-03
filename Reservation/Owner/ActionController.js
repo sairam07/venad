@@ -5,7 +5,7 @@
         .module('reservation')
         .controller('ActionController', ActionController);
 
-    ActionController.$inject = ['ownerService', '$routeParams','$window'];
+    ActionController.$inject = ['ownerService', '$routeParams', '$window'];
 
     function ActionController(ownerService, $routeParams, $window) {
         var actionVm = this;
@@ -14,34 +14,47 @@
 
         ownerService
             .getUserById($routeParams.id)
-            .then(function(data){
+            .then(function(data) {
                 actionVm.detail = data;
-            }, function (error){
+            }, function(error) {
                 console.log(error);
             })
         console.log('ActionController');
 
-        actionVm.addtable = function(resobj,id){
-            actionVm.table=resobj;
-            actionVm.table.date=actionVm.detail.date;
-            actionVm.table.time=actionVm.detail.time;
+        actionVm.addtable = function(resobj, id) {
+            actionVm.table = resobj;
+            actionVm.table.date = actionVm.detail.date;
+            actionVm.table.time = actionVm.detail.time;
             ownerService
-                .puttable(actionVm.table,$routeParams.id)
-                .then(function(response){
+                .puttable(actionVm.table, $routeParams.id)
+                .then(function(response) {
                     console.log(response.custId);
                     $window.alert("Table Assigned");
                 });
 
-                    }
-        actionVm.updatetable = function(resobj,id){
-            actionVm.table=resobj;
+        }
+        actionVm.updatetable = function(resobj, id) {
+            actionVm.table = resobj;
 
             console.log('Updatetable');
             ownerService
-                .updatetable(actionVm.table,$routeParams.id)
-                .then(function(response){
+                .updatetable(actionVm.table, $routeParams.id)
+                .then(function(response) {
                     console.log(response.tab_id);
                     $window.alert("Record Updated");
+                });
+
+        }
+
+        actionVm.deletetable = function(resobj, id) {
+            actionVm.table = resobj;
+
+            console.log('Deletetable');
+            ownerService
+                .updatetable(actionVm.table, $routeParams.id)
+                .then(function(response) {
+                    console.log(response.tab_id);
+                    $window.alert("Record Deleted");
                 });
 
         }
