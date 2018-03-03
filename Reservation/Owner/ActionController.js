@@ -46,7 +46,7 @@
 
         }
 
-        actionVm.deletetable = function() {
+        actionVm.deletetable = function(id) {
 
             console.log('Delete table');
             ownerService
