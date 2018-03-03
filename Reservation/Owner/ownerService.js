@@ -86,9 +86,9 @@
             return defer.promise;
         };
 
-        self.deletetable = function(table, id) {
+        self.deletetable = function(id) {
             var defer = $q.defer();
-            console.log(table);
+            console.log("At Delete");
             $http
                 .delete(endpoint + '/app/reservation/' + id)
                 .then(function(response) {
